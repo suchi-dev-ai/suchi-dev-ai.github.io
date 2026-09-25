@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sucharitha S — Tech Translator</title>
+<meta name="description" content="Sucharitha S — bridging business goals and backend code. Projects in AI agents, workflow automation, and applied data science.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper: #F6F7F4;
+    --ink: #16201C;
+    --ink-soft: #4B564F;
+    --line: #D8DCD3;
+    --accent: #2F6F62;
+    --accent-soft: #E3EDE8;
+    --clay: #B4633B;
+    --max: 780px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{color:inherit;}
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--accent);
+    outline-offset:3px;
+  }
+
+  .wrap{
+    max-width:var(--max);
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  /* ---------- Nav ---------- */
+  header{
+    padding:28px 0 0;
+  }
+  nav.wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+  .brand{
+    font-family:'Fraunces', serif;
+    font-size:19px;
+    font-weight:600;
+    letter-spacing:-0.01em;
+    text-decoration:none;
+  }
+  .navlinks{
+    display:flex;
+    gap:26px;
+    font-size:15px;
+  }
+  .navlinks a{
+    text-decoration:none;
+    color:var(--ink-soft);
+    border-bottom:1px solid transparent;
+    padding-bottom:2px;
+    transition:border-color .15s ease, color .15s ease;
+  }
+  .navlinks a:hover{
+    color:var(--ink);
+    border-color:var(--accent);
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:86px 0 70px;
+  }
+  .location{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.06em;
+    color:var(--ink-soft);
+    margin:0 0 18px;
+  }
+  h1.name{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:clamp(48px, 9vw, 84px);
+    line-height:0.98;
+    letter-spacing:-0.01em;
+    margin:0 0 20px;
+  }
+  .tagline{
+    max-width:480px;
+    font-size:19px;
+    color:var(--ink-soft);
+    margin:0 0 40px;
+  }
+  .tagline strong{
+    color:var(--ink);
+    font-weight:500;
+  }
+
+  /* bridge motif */
+  .bridge{
+    width:100%;
+    max-width:420px;
+    height:auto;
+    display:block;
+  }
+  .bridge path{
+    stroke-dasharray:340;
+    stroke-dashoffset:340;
+    animation:draw 1.4s ease-out .3s forwards;
+  }
+  .bridge circle{
+    opacity:0;
+    animation:fadein .6s ease-out forwards;
+  }
+  .bridge circle.a{ animation-delay:.2s; }
+  .bridge circle.b{ animation-delay:1.5s; }
+  @keyframes draw{ to{ stroke-dashoffset:0; } }
+  @keyframes fadein{ to{ opacity:1; } }
+  @media (prefers-reduced-motion: reduce){
+    .bridge path{ stroke-dashoffset:0; animation:none; }
+    .bridge circle{ opacity:1; animation:none; }
+  }
+
+  /* ---------- Section shared ---------- */
+  section{
+    padding:56px 0;
+    border-top:1px solid var(--line);
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    color:var(--accent);
+    margin:0 0 22px;
+  }
+
+  /* ---------- About ---------- */
+  #about p{
+    max-width:620px;
+    font-size:18px;
+    color:var(--ink-soft);
+  }
+  #about p + p{ margin-top:16px; }
+  .skills{
+    list-style:none;
+    padding:0;
+    margin:28px 0 0;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  .skills li{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px;
+    color:var(--ink);
+    background:var(--accent-soft);
+    border:1px solid var(--line);
+    padding:6px 12px;
+    border-radius:4px;
+  }
+
+  /* ---------- Projects ---------- */
+  .project{
+    padding:28px 0;
+    border-top:1px solid var(--line);
+  }
+  .project:first-of-type{ border-top:none; padding-top:0; }
+  .project-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .project h3{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:24px;
+    margin:0;
+  }
+  .project h3 a{
+    text-decoration:none;
+    border-bottom:1px solid var(--line);
+    transition:border-color .15s ease;
+  }
+  .project h3 a:hover{
+    border-color:var(--accent);
+  }
+  .project .role{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    color:var(--ink-soft);
+    white-space:nowrap;
+  }
+  .project p{
+    max-width:600px;
+    color:var(--ink-soft);
+    margin:12px 0 14px;
+  }
+  .stack{
+    list-style:none;
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    padding:0;
+    margin:0;
+  }
+  .stack li{
+    font-size:12.5px;
+    color:var(--ink-soft);
+  }
+  .stack li:not(:last-child)::after{
+    content:"·";
+    margin-left:8px;
+    color:var(--line);
+  }
+
+  /* ---------- Connect / footer ---------- */
+  #connect p{
+    max-width:480px;
+    color:var(--ink-soft);
+    font-size:18px;
+  }
+  .connect-links{
+    display:flex;
+    gap:24px;
+    margin-top:24px;
+    flex-wrap:wrap;
+  }
+  .connect-links a{
+    text-decoration:none;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:14px;
+    border-bottom:1px solid var(--line);
+    padding-bottom:2px;
+    transition:border-color .15s ease, color .15s ease;
+  }
+  .connect-links a:hover{
+    color:var(--accent);
+    border-color:var(--accent);
+  }
+
+  footer{
+    padding:36px 0 48px;
+  }
+  footer p{
+    font-size:13px;
+    color:var(--ink-soft);
+    margin:0;
+  }
+
+  @media (max-width:560px){
+    body{font-size:16px;}
+    .hero{padding:64px 0 50px;}
+    section{padding:44px 0;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a class="brand" href="#top">Sucharitha S.</a>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#connect">Connect</a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero wrap">
+    <p class="location">ONTARIO, CANADA</p>
+    <h1 class="name">Sucharitha<br>Sundararaman.</h1>
+    <p class="tagline">By day, I'm a <strong>tech translator</strong> — bridging business goals and backend code. I build AI agents, automation tools, and data pipelines that make technical work legible to everyone in the room.</p>
+
+    <svg class="bridge" viewBox="0 0 420 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M20 60 C 120 60, 150 20, 210 20 C 270 20, 300 60, 400 60" stroke="#2F6F62" stroke-width="2"/>
+      <circle class="a" cx="20" cy="60" r="6" fill="#B4633B"/>
+      <circle class="b" cx="400" cy="60" r="6" fill="#2F6F62"/>
+    </svg>
+  </section>
+
+  <section id="about" class="wrap">
+    <p class="eyebrow">about</p>
+    <p>I sit at the intersection of business strategy and applied engineering — trained as a PMP-certified program lead, now spending most of my time building with LLMs, retrieval pipelines, and workflow automation.</p>
+    <p>What draws me to this work is the translation problem: turning a vague business question into a precise technical system, and turning a model's output back into something a stakeholder can act on. That's the thread running through every project below.</p>
+    <ul class="skills">
+      <li>Python</li>
+      <li>LLM Agents</li>
+      <li>RAG / Vector Search</li>
+      <li>SQL</li>
+      <li>FastAPI</li>
+      <li>React / TypeScript</li>
+      <li>XGBoost</li>
+      <li>Program Management</li>
+    </ul>
+  </section>
+
+  <section id="projects" class="wrap">
+    <p class="eyebrow">projects</p>
+
+    <article class="project">
+      <div class="project-head">
+        <h3><a href="https://github.com/suchi-dev-ai/text2sql_agent" target="_blank" rel="noopener">Text2SQL Agent</a></h3>
+        <span class="role">Solo build</span>
+      </div>
+      <p>An LLM-powered app that turns plain-English questions into SQL. Uses a RAG pipeline over a semantic data dictionary to retrieve only the relevant tables, curated few-shot examples to shape query style, and a human-in-the-loop guard that blocks destructive SQL until a user confirms.</p>
+      <ul class="stack">
+        <li>Python</li>
+        <li>FastAPI</li>
+        <li>ChromaDB</li>
+        <li>GPT-4o</li>
+        <li>React</li>
+      </ul>
+    </article>
+
+    <article class="project">
+      <div class="project-head">
+        <h3><a href="https://github.com/Saadkhan-188/Forecasting-TTC-Subway-Delays-2022-2024-DSI_ML_Team8" target="_blank" rel="noopener">TTC Subway Delay Forecasting</a></h3>
+        <span class="role">Team capstone · 6 members</span>
+      </div>
+      <p>Analyzed 69,000+ real transit delay records to predict delay severity and duration. I owned the regression pipeline — tuning an XGBoost model on log-transformed delay times and using SHAP to explain which operational factors drive long delays.</p>
+      <ul class="stack">
+        <li>XGBoost</li>
+        <li>scikit-learn</li>
+        <li>SHAP</li>
+        <li>pandas</li>
+      </ul>
+    </article>
+
+    <article class="project">
+      <div class="project-head">
+        <h3><a href="https://github.com/suchi-dev-ai/Autoflow" target="_blank" rel="noopener">Autoflow</a></h3>
+        <span class="role">Solo build</span>
+      </div>
+      <p>A workflow automation app built with Google's Gemini API, exploring how generative AI can sit inside everyday automation tooling rather than as a standalone chat interface.</p>
+      <ul class="stack">
+        <li>TypeScript</li>
+        <li>React</li>
+        <li>Gemini API</li>
+        <li>Vite</li>
+      </ul>
+    </article>
+  </section>
+
+  <section id="connect" class="wrap">
+    <p class="eyebrow">connect</p>
+    <p>Always glad to talk shop — AI agents, data pipelines, or how to explain either one to a room that doesn't want the jargon.</p>
+    <div class="connect-links">
+      <a href="https://github.com/suchi-dev-ai" target="_blank" rel="noopener">GitHub ↗</a>
+      <a href="https://www.linkedin.com/in/sucharitha-s-pmp" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p>© 2026 Sucharitha Sundararaman.</p>
+</footer>
+
+</body>
+</html>
