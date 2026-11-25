@@ -67,6 +67,7 @@
   .navlinks{
     display:flex;
     gap:26px;
+    flex-wrap:wrap;
     font-size:15px;
   }
   .navlinks a{
@@ -235,13 +236,13 @@
     color:var(--ink-soft);
     font-size:18px;
   }
-  .connect-links{
+  .section-links{
     display:flex;
     gap:24px;
     margin-top:24px;
     flex-wrap:wrap;
   }
-  .connect-links a{
+  .section-links a{
     text-decoration:none;
     font-family:'IBM Plex Mono', monospace;
     font-size:14px;
@@ -249,7 +250,7 @@
     padding-bottom:2px;
     transition:border-color .15s ease, color .15s ease;
   }
-  .connect-links a:hover{
+  .section-links a:hover{
     color:#D97757;
     border-color:var(--accent);
   }
@@ -278,6 +279,7 @@
     <div class="navlinks">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
+      <a href="#award">Award</a>
       <a href="#connect">Connect</a>
     </div>
   </nav>
@@ -287,7 +289,7 @@
   <section class="hero wrap">
     <p class="location">NEW YORK, US</p>
     <h1 class="name">Sucharitha<br>Sundararaman.</h1>
-    <p class="tagline">By day, I'm a <strong>product builder</strong> — bridging business goals and backend code. I build AI agents, automation tools, and data pipelines that make technical work legible to everyone in the room.</p>
+    <p class="tagline">I’m a <strong>product builder</strong> who can translate strategy into deployable software. I design AI agents, automation tools, and data pipelines that turn complex engineering into clear value for everyone in the room.</p>
 
     <svg class="bridge" viewBox="0 0 420 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <path d="M20 60 C 120 60, 150 20, 210 20 C 270 20, 300 60, 400 60" stroke="#2F6F62" stroke-width="2"/>
@@ -359,10 +361,31 @@
     </article>
   </section>
 
+  <section id="award" class="wrap">
+    <p class="eyebrow">award</p>
+
+    <article class="project">
+      <div class="project-head">
+        <h3>Building Safer AI Hackathon</h3>
+      </div>
+      <p>I won a Special Award at the Building Safer AI Hackathon for building a stacked AI safety guardrail pipeline. I paired a fine-tuned mmBERT classifier for fast detection with an LLM-as-a-judge to evaluate critical edge cases, optimizing both speed and reliability. Building it under hackathon constraints reinforced my belief that effective AI security must be engineered as a fast, deployable product rather than an afterthought.</p>
+      <ul class="stack">
+        <li>Finetuning</li>
+        <li>Mistral</li>
+        <li>mmBERT</li>
+        <li>Evaluation</li>
+        <li>Guardrail</li>
+      </ul>
+      <div class="section-links">
+        <a href="./hackathon_cert.pdf" target="_blank" rel="noopener">View award certificate (PDF) ↗</a>
+      </div>
+    </article>
+  </section>
+
   <section id="connect" class="wrap">
     <p class="eyebrow">connect</p>
     <p>Always glad to talk shop — AI agents, data pipelines, or how to explain either one to a room that doesn't want the jargon.</p>
-    <div class="connect-links">
+    <div class="section-links">
       <a href="https://github.com/suchi-dev-ai" target="_blank" rel="noopener">GitHub ↗</a>
       <a href="https://www.linkedin.com/in/sucharitha-s-pmp" target="_blank" rel="noopener">LinkedIn ↗</a>
     </div>
